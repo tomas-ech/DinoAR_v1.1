@@ -8,6 +8,7 @@ public class PlayerPoints : MonoBehaviour
     public GameObject gameOver;
     private int playerScore = 0;
     public TextMeshProUGUI scoreText;
+    public AudioSource playSound;
 
     
     void Start()
@@ -24,6 +25,7 @@ public class PlayerPoints : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
     if (other.CompareTag("Coin"))
     {
+        playSound.Play();
         playerScore += 1;
         scoreText.text = "Score: " + playerScore;
         other.gameObject.SetActive(false);

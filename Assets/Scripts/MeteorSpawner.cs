@@ -45,7 +45,7 @@ public class MeteorSpawner : MonoBehaviour
 
         Instantiate(fireBallPrefabs[meteorIndex], (new Vector3((Random.Range(spawnLimitXLeft, spawnLimitXRight)), spawnerPos.position.y, spawnerPos.position.z)), fireBallPrefabs[meteorIndex].transform.rotation, parent);
 
-        float spawnInterval = Random.Range(1, 3);
+        float spawnInterval = Random.Range(0.5f, 2f);
 
         Invoke("SpawnMeteor", spawnInterval);
     }

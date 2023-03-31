@@ -6,7 +6,7 @@ public class InputController : MonoBehaviour
 {
     Transform cam;
     public Joystick joystickMove;
-    public Joystick joystickCam;
+    //public Joystick joystickCam;
 
     public Transform player;
     //public CharacterController controller;
@@ -15,7 +15,7 @@ public class InputController : MonoBehaviour
     public float turnSpeed = 5.0f;
 
     float x;
-    float y;
+    //float y;
 
     public BoxCollider boxCollider;
     
@@ -31,15 +31,16 @@ public class InputController : MonoBehaviour
     void Movement()
     {
         x = joystickMove.Horizontal + Input.GetAxis("Horizontal");
-        y = joystickMove.Vertical + Input.GetAxis("Vertical");
+        //y = joystickMove.Vertical + Input.GetAxis("Vertical");
 
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * x);
-        transform.Rotate(new Vector3(30,0,0) * Time.deltaTime * turnSpeed * x);
+        transform.Translate(Vector3.forward * Time.deltaTime * speed * -x);
+        transform.Rotate(new Vector3(30,0,0) * Time.deltaTime * turnSpeed * -x);
 
     }
 
     void Update()
     {
         Movement();
+
     }
 }
