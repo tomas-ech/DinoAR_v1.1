@@ -3651,5 +3651,5 @@ MonoBehaviour:
   joystickCam: {fileID: 1528607656}
   player: {fileID: 8424951829078240702}
   controller: {fileID: 0}
-  speed: 0.2
-  turnSpeed: 5
+  speed: 0.1
+  turnSpeed: 3.78
