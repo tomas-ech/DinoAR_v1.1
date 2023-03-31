@@ -30,11 +30,8 @@ public class InputController : MonoBehaviour
         y = joystickMove.Vertical + Input.GetAxis("Vertical");
 
         transform.Translate(Vector3.forward * Time.deltaTime * speed * x);
-        transform.Translate(Vector3.up * Time.deltaTime * speed * y);
+        transform.Rotate(new Vector3(30,0,0) * Time.deltaTime * turnSpeed * x);
 
-
-        //move = player.right * x + player.forward * z;
-        //controller.Move(move * speed * Time.deltaTime);
     }
 
     // Update is called once per frame
