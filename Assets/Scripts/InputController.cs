@@ -12,9 +12,10 @@ public class InputController : MonoBehaviour
     public CharacterController controller;
 
     public float speed = 10f;
+    public float turnSpeed = 5.0f;
 
     float x;
-    float z;
+    float y;
     Vector3 move;
 
     // Start is called before the first frame update
@@ -26,9 +27,14 @@ public class InputController : MonoBehaviour
     void Movement()
     {
         x = joystickMove.Horizontal + Input.GetAxis("Horizontal");
-        z = joystickMove.Vertical + Input.GetAxis("Vertical");
-        move = player.right * x + player.forward * z;
-        controller.Move(move * speed * Time.deltaTime);
+        y = joystickMove.Vertical + Input.GetAxis("Vertical");
+
+        transform.Translate(Vector3.forward * Time.deltaTime * speed * x);
+        transform.Translate(Vector3.up * Time.deltaTime * speed * y);
+
+
+        //move = player.right * x + player.forward * z;
+        //controller.Move(move * speed * Time.deltaTime);
     }
 
     // Update is called once per frame
