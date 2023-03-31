@@ -28,13 +28,10 @@ public class MeteorSpawner : MonoBehaviour
 
     private void Update()
     {
-        /*int scorePoints = meteorScript.points;
-        score.text = "Score:" + scorePoints.ToString();
-        Debug.Log("Puntaje:" + scorePoints);*/
         
     }
 
-    // Spawn random ball at random x position at top of play area
+  
     void SpawnMeteor ()
     {
         // Generate random ball index and random spawn position
@@ -45,6 +42,7 @@ public class MeteorSpawner : MonoBehaviour
 
         Instantiate(fireBallPrefabs[meteorIndex], (new Vector3((Random.Range(spawnLimitXLeft, spawnLimitXRight)), spawnerPos.position.y, spawnerPos.position.z)), fireBallPrefabs[meteorIndex].transform.rotation, parent);
 
+        //random spawn time
         float spawnInterval = Random.Range(0.5f, 2f);
 
         Invoke("SpawnMeteor", spawnInterval);

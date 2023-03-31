@@ -5,7 +5,6 @@ using TMPro;
 
 public class PlayerPoints : MonoBehaviour
 {
-    public GameObject gameOver;
     private int playerScore = 0;
     public TextMeshProUGUI scoreText;
     public AudioSource playSound;
