@@ -9,19 +9,23 @@ public class InputController : MonoBehaviour
     public Joystick joystickCam;
 
     public Transform player;
-    public CharacterController controller;
+    //public CharacterController controller;
 
     public float speed = 10f;
     public float turnSpeed = 5.0f;
 
     float x;
     float y;
-    Vector3 move;
+
+    public BoxCollider boxCollider;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main.transform;
+        boxCollider = GetComponent<BoxCollider>();
+        boxCollider.enabled = true;
     }
 
     void Movement()
@@ -34,7 +38,6 @@ public class InputController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         Movement();

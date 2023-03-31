@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class PlayerLose : MonoBehaviour
+public class PlayerPoints : MonoBehaviour
 {
     public GameObject gameOver;
+    private int playerScore = 0;
+    public TextMeshProUGUI scoreText;
+
     
     void Start()
     {
@@ -18,9 +22,11 @@ public class PlayerLose : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-    if (other.CompareTag("Player"))
+    if (other.CompareTag("Coin"))
     {
-        gameOver.SetActive(true);
+        playerScore += 1;
+        scoreText.text = "Score: " + playerScore;
+        other.gameObject.SetActive(false);
     }
     }
 }

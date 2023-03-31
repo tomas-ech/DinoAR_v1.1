@@ -7,6 +7,6 @@ public class RestartButton : MonoBehaviour
 {
     public void restartGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("MeteorGame");
     }
 }

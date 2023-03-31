@@ -1673,7 +1673,7 @@ Camera:
     height: 1
   near clip plane: 0.05
   far clip plane: 2000
-  field of view: 60
+  field of view: 26.991467
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
@@ -1699,7 +1699,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746077656}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.014, y: -61.212, z: 0.071}
+  m_LocalPosition: {x: 0.014, y: -61.1117, z: 0.071}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3231,6 +3231,7 @@ GameObject:
   - component: {fileID: 6945083755006439468}
   - component: {fileID: 7722042014028458647}
   - component: {fileID: 7722042014028458648}
+  - component: {fileID: 7722042014028458649}
   m_Layer: 0
   m_Name: earth-relief-Low-Poly
   m_TagString: Planet
@@ -3251,19 +3252,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotatorSpeed: 0.3
---- !u!135 &7722042014028458648
-SphereCollider:
+  capsuleCollider: {fileID: 0}
+--- !u!136 &7722042014028458648
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7722042014028458646}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
+  m_Radius: 37.15989
+  m_Height: 578.701
+  m_Direction: 1
+  m_Center: {x: 0.35000104, y: -94.69743, z: 0.26386178}
+--- !u!54 &7722042014028458649
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7722042014028458646}
   serializedVersion: 2
-  m_Radius: 40
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1 &7740144949511693737
 GameObject:
   m_ObjectHideFlags: 0
@@ -3579,8 +3598,9 @@ GameObject:
   - component: {fileID: 8424951829078240702}
   - component: {fileID: 9196528154222278405}
   - component: {fileID: 9196528154222278406}
-  - component: {fileID: 9196528154222278407}
   - component: {fileID: 9196528154222278408}
+  - component: {fileID: 9196528154222278409}
+  - component: {fileID: 9196528154222278410}
   m_Layer: 0
   m_Name: dino2
   m_TagString: Player
@@ -3617,24 +3637,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9196528154222278404}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.594833, y: 7.845193, z: 5.0011096}
-  m_Center: {x: -0.116751365, y: 3.4226007, z: 1.2948152}
---- !u!114 &9196528154222278407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9196528154222278404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b4a66854d1df984d9a3d4cb3cc5e557, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOver: {fileID: 0}
+  m_Size: {x: 134.07132, y: 8.211723, z: 6.8151746}
+  m_Center: {x: -14.061373, y: 3.605865, z: 0.71169144}
 --- !u!114 &9196528154222278408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3650,6 +3657,36 @@ MonoBehaviour:
   joystickMove: {fileID: 293608188}
   joystickCam: {fileID: 1528607656}
   player: {fileID: 8424951829078240702}
-  controller: {fileID: 0}
   speed: 0.1
   turnSpeed: 3.78
+  boxCollider: {fileID: 9196528154222278406}
+--- !u!114 &9196528154222278409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9196528154222278404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3316301c1b4c83244b933b88b8a6e061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver: {fileID: 19128797}
+  scoreText: {fileID: 303039719}
+--- !u!54 &9196528154222278410
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9196528154222278404}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 1
